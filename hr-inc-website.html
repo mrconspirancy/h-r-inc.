@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H & R Inc. - Pan-African Strategic Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .component-card {
+            transition: all 0.3s ease;
+        }
+        .component-card:hover {
+            transform: scale(1.02);
+        }
+        .component-card.selected {
+            transform: scale(1.05);
+            box-shadow: 0 0 0 4px white;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen">
+    <div class="max-w-6xl mx-auto p-8">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <!-- Logo -->
+            <div class="flex justify-center mb-6">
+                <img 
+                    src="hrpic.png" 
+                    alt="H&R Inc Logo" 
+                    class="w-64 h-auto"
+                />
+            </div>
+            <h1 class="text-4xl font-bold text-white mb-3">H & R Inc.</h1>
+            <p class="text-xl text-slate-300 mb-4">Pan-African Strategic Solutions</p>
+            
+            <!-- Contact Information -->
+            <div class="flex justify-center gap-6 mb-6 text-slate-300 text-sm flex-wrap">
+                <div class="flex items-center gap-2">
+                    <span class="font-semibold">📧</span>
+                    <a href="mailto:info@h&rincorporation.com" class="hover:text-blue-400 transition">
+                        info@h&rincorporation.com
+                    </a>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="font-semibold">📱</span>
+                    <a href="tel:+254759976923" class="hover:text-blue-400 transition">
+                        +254 759 976 923
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Service Icons -->
+            <div class="flex justify-center gap-6 flex-wrap">
+                <div class="flex items-center gap-2 bg-slate-800 px-4 py-2 rounded-lg">
+                    <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <span class="text-slate-200 text-sm">Defence Solutions</span>
+                </div>
+                <div class="flex items-center gap-2 bg-slate-800 px-4 py-2 rounded-lg">
+                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                    <span class="text-slate-200 text-sm">Cyber Security</span>
+                </div>
+                <div class="flex items-center gap-2 bg-slate-800 px-4 py-2 rounded-lg">
+                    <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="text-slate-200 text-sm">Geopolitical Analysis</span>
+                </div>
+                <div class="flex items-center gap-2 bg-slate-800 px-4 py-2 rounded-lg">
+                    <svg class="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                    <span class="text-slate-200 text-sm">Health Strategies</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Architecture Diagram -->
+        <div class="bg-slate-800 rounded-xl p-8 shadow-2xl mb-8">
+            <h2 class="text-2xl font-bold text-white mb-6 text-center">System Architecture</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Frontend Component -->
+                <div class="component-card cursor-pointer bg-slate-700 rounded-lg p-6 shadow-lg" onclick="toggleComponent('frontend')">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-blue-500 p-3 rounded-lg">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Frontend Layer</h3>
+                            <p class="text-sm text-slate-400">React + Tailwind CSS</p>
+                        </div>
+                    </div>
+                    <div id="frontend-details" class="hidden animate-fadeIn">
+                        <ul class="space-y-2 mt-4">
+                            <li class="flex items-start gap-2 text-slate-300 text-sm">
+                                <span class="text-green-400 mt-1">→</span>
+                                <span>Responsive landing page</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-slate-300 text-sm">
+                                <span class="text-green-400 mt-1">→</span>
+                                <span>Service showcase (Defence, Cyber Security, Geopolitics, Health)</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-slate-300 text-sm">
+                                <span class="text-green-400 mt-1">→</span>
+                                <span>Interactive dashboards</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-slate-300 text-sm">
+                                <span class="text-green-400 mt-1">→</span>
+                                <span>Contact & consultation forms</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-slate-300 text-sm">
+                                <span class="text-green-400 mt-1">→</span>
+                                <span>News & insights blog</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Backend Component -->
+                <div class="component-card cursor-pointer bg-slate-700 rounded-lg p-6 shadow-lg" onclick="toggleComponent('backend')">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-green-500 p-3 rounded-lg">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Backend Layer</h3>
+                            <p class="text-sm text-slate-400">Node.js + Express</p>
+                        </div>
+                    </div>
+                    <div id="backend-details" class="hidden animate-fadeIn">
+                        <ul class="space-y-2 mt-4">
+                            <li class="flex items-start gap-2 text-slate-300 text-sm">
+                                <span class="text-green-400 mt-1">→</span>
+                                <span>RESTful API endpoints</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-slate-300 text-sm">
+                                <span class="text-green-400 mt-1">→</span>
+                                <span>User authentication & authorization</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-slate-300 text-sm">
+                                <span class="text-green-400 mt-1">→</span>
+                                <span>Content management system</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-slate-300 text-sm">
+                                <span class="text-green-400 mt-1">→</span>
+                                <span>Analytics tracking</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-slate-300 text-sm">
+                                <span class="text-green-400 mt-1">→</span>
+                                <span>Email notification service</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Database Component -->
+                <div class="component-card cursor-pointer bg-slate-700 rounded-lg p-6 shadow-lg" onclick="toggleComponent('database')">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-purple-500 p-3 rounded-lg">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Database Layer</h3>
+                            <p class="text-sm text-slate-400">PostgreSQL + MongoDB</p>
+                        </div>
+                    </div>
+                    <div id="database-details" class="hidden animate-fadeIn">
+                        <ul class="space-y-2 mt-4">
+                            <li class="flex items-start gap-2 text-slate-300 text-sm">
+                                <span class="text-green-400 mt-1">→</span>
+                                <span>Client & project data (PostgreSQL)</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-slate-300 text-sm">
+                                <span class="text-green-400 mt-1">→</span>
+                                <span>Blog posts & media (MongoDB)</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-slate-300 text-sm">
+                                <span class="text-green-400 mt-1">→</span>
+                                <span>User credentials & sessions</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-slate-300 text-sm">
+                                <span class="text-green-400 mt-1">→</span>
+                                <span>Analytics & metrics</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-slate-300 text-sm">
+                                <span class="text-green-400 mt-1">→</span>
+                                <span>Geopolitical data feeds</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Security Component -->
+                <div class="component-card cursor-pointer bg-slate-700 rounded-lg p-6 shadow-lg" onclick="toggleComponent('security')">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-red-500 p-3 rounded-lg">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Security Layer</h3>
+                            <p class="text-sm text-slate-400">JWT + HTTPS + Firewall</p>
+                        </div>
+                    </div>
+                    <div id="security-details" class="hidden animate-fadeIn">
+                        <ul class="space-y-2 mt-4">
+                            <li class="flex items-start gap-2 text-slate-300 text-sm">
+                                <span class="text-green-400 mt-1">→</span>
+                                <span>SSL/TLS encryption</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-slate-300 text-sm">
+                                <span class="text-green-400 mt-1">→</span>
+                                <span>JWT authentication</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-slate-300 text-sm">
+                                <span class="text-green-400 mt-1">→</span>
+                                <span>Rate limiting & DDoS protection</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-slate-300 text-sm">
+                                <span class="text-green-400 mt-1">→</span>
+                                <span>Data encryption at rest</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-slate-300 text-sm">
+                                <span class="text-green-400 mt-1">→</span>
+                                <span>Security audit logging</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center text-slate-400 mt-6 text-sm">
+                Click on any component to see details
+            </p>
+        </div>
+
+        <!-- Code Starter Templates -->
+        <div class="bg-slate-800 rounded-xl p-8 shadow-2xl">
+            <h2 class="text-2xl font-bold text-white mb-6">Quick Start Code Templates</h2>
+            
+            <div class="space-y-4">
+                <!-- Frontend Component Example -->
+                <div class="bg-slate-900 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold text-blue-400 mb-2">Frontend - Service Card Component</h3>
+                    <pre class="text-sm text-slate-300 overflow-x-auto"><code>// ServiceCard.jsx (React + OOP concepts)
+class ServiceCard extends React.Component {
+  render() {
+    const { title, description, icon } = this.props;
+    return (
+      &lt;div className="service-card"&gt;
+        &lt;img src={icon} alt={title} /&gt;
+        &lt;h3&gt;{title}&lt;/h3&gt;
+        &lt;p&gt;{description}&lt;/p&gt;
+      &lt;/div&gt;
+    );
+  }
+}</code></pre>
+                </div>
+
+                <!-- Backend API Example -->
+                <div class="bg-slate-900 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold text-green-400 mb-2">Backend - API Endpoint Structure</h3>
+                    <pre class="text-sm text-slate-300 overflow-x-auto"><code>// routes/services.js (Node.js + Express)
+class ServiceController {
+  async getAllServices(req, res) {
+    const services = await Service.find();
+    res.json(services);
+  }
+  
+  async createConsultation(req, res) {
+    const consultation = new Consultation(req.body);
+    await consultation.save();
+    res.status(201).json(consultation);
+  }
+}
+
+module.exports = new ServiceController();</code></pre>
+                </div>
+
+                <!-- Database Model Example -->
+                <div class="bg-slate-900 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold text-purple-400 mb-2">Database - Service Model</h3>
+                    <pre class="text-sm text-slate-300 overflow-x-auto"><code>// models/Service.js (Mongoose ORM)
+const serviceSchema = new Schema({
+  title: { type: String, required: true },
+  category: { 
+    type: String, 
+    enum: ['defence', 'cyber', 'geopolitics', 'health']
+  },
+  description: String,
+  caseStudies: [{ type: Schema.Types.ObjectId, ref: 'CaseStudy' }],
+  createdAt: { type: Date, default: Date.now }
+});
+
+module.exports = mongoose.model('Service', serviceSchema);</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Stack Summary -->
+        <div class="mt-8 bg-gradient-to-r from-blue-900 to-purple-900 rounded-xl p-6 text-white">
+            <h3 class="text-xl font-bold mb-3">Recommended Tech Stack</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                <div>
+                    <strong>Frontend:</strong> React, Tailwind CSS, React Router
+                </div>
+                <div>
+                    <strong>Backend:</strong> Node.js, Express, JWT Auth
+                </div>
+                <div>
+                    <strong>Database:</strong> PostgreSQL + MongoDB, Redis cache
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentComponent = null;
+
+        function toggleComponent(componentId) {
+            // Hide all details first
+            const allDetails = ['frontend-details', 'backend-details', 'database-details', 'security-details'];
+            const allCards = document.querySelectorAll('.component-card');
+            
+            allDetails.forEach(id => {
+                const element = document.getElementById(id);
+                if (id !== componentId + '-details') {
+                    element.classList.add('hidden');
+                }
+            });
+
+            allCards.forEach(card => {
+                card.classList.remove('selected');
+            });
+
+            // Toggle the clicked component
+            const details = document.getElementById(componentId + '-details');
+            const card = event.currentTarget;
+            
+            if (currentComponent === componentId) {
+                details.classList.add('hidden');
+                currentComponent = null;
+            } else {
+                details.classList.remove('hidden');
+                card.classList.add('selected');
+                currentComponent = componentId;
+            }
+        }
+    </script>
+</body>
+</html>
